@@ -419,44 +419,44 @@ wire ypbpr;
 
 `ifdef USE_HDMI
 i2c_master #(100_000_000) i2c_master (
-	.CLK         (clk_100),
-	.I2C_START   (i2c_start),
-	.I2C_READ    (i2c_read),
-	.I2C_ADDR    (i2c_addr),
-	.I2C_SUBADDR (i2c_subaddr),
-	.I2C_WDATA   (i2c_dout),
-	.I2C_RDATA   (i2c_din),
-	.I2C_END     (i2c_end),
-	.I2C_ACK     (i2c_ack),
+	.CLK              (clk_100          ),
+	.I2C_START        (i2c_start        ),
+	.I2C_READ         (i2c_read         ),
+	.I2C_ADDR         (i2c_addr         ),
+	.I2C_SUBADDR      (i2c_subaddr      ),
+	.I2C_WDATA        (i2c_dout         ),
+	.I2C_RDATA        (i2c_din          ),
+	.I2C_END          (i2c_end          ),
+	.I2C_ACK          (i2c_ack          ),
 
 	//I2C bus
-	.I2C_SCL     (HDMI_SCL),
-	.I2C_SDA     (HDMI_SDA)
+	.I2C_SCL          (HDMI_SCL         ),
+	.I2C_SDA          (HDMI_SDA         )
 );
 
 mist_video #(.COLOR_DEPTH(8), .SD_HCNT_WIDTH(10), .USE_BLANKS(1), .OUT_COLOR_DEPTH(8), .BIG_OSD(BIG_OSD), .VIDEO_CLEANER(1)) hdmi_video(
-	.clk_sys        ( clk_sys          ),
-	.SPI_SCK        ( SPI_SCK          ),
-	.SPI_SS3        ( SPI_SS3          ),
-	.SPI_DI         ( SPI_DI           ),
-	.R              ( R                ),
-	.G              ( G                ),
-	.B              ( B                ),
-	.HBlank         ( hblank           ),
-	.VBlank         ( vblank           ),
-	.HSync          ( hsync            ),
-	.VSync          ( vsync            ),
-	.VGA_R          ( HDMI_R           ),
-	.VGA_G          ( HDMI_G           ),
-	.VGA_B          ( HDMI_B           ),
-	.VGA_VS         ( HDMI_VS          ),
-	.VGA_HS         ( HDMI_HS          ),
-	.VGA_DE         ( HDMI_DE          ),
-	.ce_divider     ( 3'd7             ),
-	.scandoubler_disable( 1'b1         ),
-	.scanlines      (                  ),
-	.ypbpr          ( 1'b0             ),
-	.no_csync       ( 1'b1             )
+	.clk_sys          (clk_sys          ),
+	.SPI_SCK          (SPI_SCK          ),
+	.SPI_SS3          (SPI_SS3          ),
+	.SPI_DI           (SPI_DI           ),
+	.R                (R                ),
+	.G                (G                ),
+	.B                (B                ),
+	.HBlank           (hblank           ),
+	.VBlank           (vblank           ),
+	.HSync            (hsync            ),
+	.VSync            (vsync            ),
+	.VGA_R            (HDMI_R           ),
+	.VGA_G            (HDMI_G           ),
+	.VGA_B            (HDMI_B           ),
+	.VGA_VS           (HDMI_VS          ),
+	.VGA_HS           (HDMI_HS          ),
+	.VGA_DE           (HDMI_DE          ),
+	.ce_divider       (3'd7             ),
+	.scandoubler_disable(1'b1           ),
+	.scanlines        (                 ),
+	.ypbpr            (1'b0             ),
+	.no_csync         (1'b1             )
 	);
 
 assign HDMI_PCLK = clk_25;
@@ -464,31 +464,30 @@ assign HDMI_PCLK = clk_25;
 `endif
 
 mist_video #(.COLOR_DEPTH(8), .SD_HCNT_WIDTH(11), .OUT_COLOR_DEPTH(VGA_BITS), .BIG_OSD(BIG_OSD)) mist_video(
-	.clk_sys      (clk_vdp    ),
-	.SPI_SCK      (SPI_SCK    ),
-	.SPI_SS3      (SPI_SS3    ),
-	.SPI_DI       (SPI_DI     ),
-	.R            (vga_red    ),
-	.G            (vga_green  ),
-	.B            (vga_blue   ),
-	.HSync        (vga_hsync  ),
-	.VSync        (vga_vsync  ),
-	.HBlank       (vga_hblank ),
-	.VBlank       (vga_vblank ),
-	.VGA_R        (VGA_R      ),
-	.VGA_G        (VGA_G      ),
-	.VGA_B        (VGA_B      ),
-	.VGA_VS       (VGA_VS     ),
-	.VGA_HS       (VGA_HS     ),
-	.ce_divider   (1'b0       ),
-	.no_csync     (no_csync   ),
+	.clk_sys          (clk_vdp          ),
+	.SPI_SCK          (SPI_SCK          ),
+	.SPI_SS3          (SPI_SS3          ),
+	.SPI_DI           (SPI_DI           ),
+	.R                (vga_red          ),
+	.G                (vga_green        ),
+	.B                (vga_blue         ),
+	.HSync            (vga_hsync        ),
+	.VSync            (vga_vsync        ),
+	.HBlank           (vga_hblank       ),
+	.VBlank           (vga_vblank       ),
+	.VGA_R            (VGA_R            ),
+	.VGA_G            (VGA_G            ),
+	.VGA_B            (VGA_B            ),
+	.VGA_VS           (VGA_VS           ),
+	.VGA_HS           (VGA_HS           ),
+	.ce_divider       (1'b0             ),
+	.no_csync         (no_csync         ),
 	.scandoubler_disable ( scandoubler_disable ),
-	.ypbpr        (ypbpr       ),
-        .scanlines    (scale       ),
-	.rotate       ( 2'b00      ),
-	.blend        ( 1'b0       )
+	.ypbpr            (ypbpr            ),
+	.scanlines        (scale            ),
+	.rotate           (2'b00            ),
+	.blend            (1'b0             )
 );
-
 
 ////////////////////   AUDIO   ///////////////////
 
