@@ -173,8 +173,6 @@ assign SDRAM2_nWE = 1;
 
 assign LED = 0;
 
-
-
 `include "build_id.v"
 localparam CONF_STR = {
 	"TatungEinstein;;",
@@ -298,27 +296,27 @@ wire  [7:0] ioctl_index;
 
 user_io #(.STRLEN($size(CONF_STR)>>3), .SD_IMAGES(1), .PS2DIV(500), .FEATURES(32'h0 | (BIG_OSD << 13) | (HDMI << 14))) user_io
 (	
-	.clk_sys        	(clk_sys          ),
+	.clk_sys          (clk_sys          ),
 	.clk_sd           (clk_sys          ),
-	.conf_str       	(CONF_STR       	),
-	.SPI_CLK        	(SPI_SCK        	),
-	.SPI_SS_IO      	(CONF_DATA0     	),
-	.SPI_MISO       	(SPI_DO        	),
-	.SPI_MOSI       	(SPI_DI         	),
-	.buttons        	(buttons        	),
-	.switches       	(switches      	),
+	.conf_str         (CONF_STR         ),
+	.SPI_CLK          (SPI_SCK          ),
+	.SPI_SS_IO        (CONF_DATA0       ),
+	.SPI_MISO         (SPI_DO           ),
+	.SPI_MOSI         (SPI_DI           ),
+	.buttons          (buttons          ),
+	.switches         (switches         ),
 	.no_csync         (no_csync         ),
-	.ypbpr          	(ypbpr          	),
+	.ypbpr            (ypbpr            ),
 
 	.ps2_kbd_clk      (ps2_kbd_clk      ),
 	.ps2_kbd_data     (ps2_kbd_data     ),
-	.key_strobe     	(key_strobe     	),
-	.key_pressed    	(key_pressed    	),
-	.key_extended   	(key_extended   	),
-	.key_code       	(key_code       	),
+	.key_strobe       (key_strobe       ),
+	.key_pressed      (key_pressed      ),
+	.key_extended     (key_extended     ),
+	.key_code         (key_code         ),
 	.joystick_0       (joystick_0       ),
 	.joystick_1       (joystick_1       ),
-	.status         	(status         	),
+	.status           (status           ),
 	.scandoubler_disable(scandoubler_disable),
 
 `ifdef USE_HDMI
@@ -333,7 +331,7 @@ user_io #(.STRLEN($size(CONF_STR)>>3), .SD_IMAGES(1), .PS2DIV(500), .FEATURES(32
 `endif
 	
 // SD CARD
-   .sd_lba           (sd_lba           ),
+        .sd_lba           (sd_lba           ),
 	.sd_rd            (sd_rd            ),
 	.sd_wr            (sd_wr            ),
 	.sd_ack           (sd_ack           ),
@@ -344,7 +342,7 @@ user_io #(.STRLEN($size(CONF_STR)>>3), .SD_IMAGES(1), .PS2DIV(500), .FEATURES(32
 	.sd_din           (sd_buff_din      ),
 	.sd_buff_addr     (sd_buff_addr     ),
 	.sd_dout_strobe   (sd_buff_wr       ),
-   .img_mounted      (img_mounted      ),
+        .img_mounted      (img_mounted      ),
 	.img_size         (img_size         )
 );
 
@@ -403,7 +401,7 @@ tatung tatung
 	.joystick_0(joystick_a),
 	.joystick_1(joystick_b),
 	.joystick_analog_0(joystick_analog_0),
-   .joystick_analog_1(joystick_analog_1),
+        .joystick_analog_1(joystick_analog_1),
 
 	.diagnostic(status[6]),
 	.border(status[7]),
@@ -411,7 +409,6 @@ tatung tatung
 	.m256(status[10]),
 	.scandoubler(scandoubler)
 );
-
 
 ////////////////////   VIDEO   ///////////////////
 
@@ -457,7 +454,7 @@ mist_video #(.COLOR_DEPTH(8), .SD_HCNT_WIDTH(10), .USE_BLANKS(1), .OUT_COLOR_DEP
 	.VGA_DE         ( HDMI_DE          ),
 	.ce_divider     ( 3'd7             ),
 	.scandoubler_disable( 1'b1         ),
-	.scanlines      ( ),
+	.scanlines      (                  ),
 	.ypbpr          ( 1'b0             ),
 	.no_csync       ( 1'b1             )
 	);
@@ -486,10 +483,10 @@ mist_video #(.COLOR_DEPTH(8), .SD_HCNT_WIDTH(11), .OUT_COLOR_DEPTH(VGA_BITS), .B
 	.ce_divider   (1'b0       ),
 	.no_csync     (no_csync   ),
 	.scandoubler_disable ( scandoubler_disable ),
-	.ypbpr       (ypbpr       ),
-   .scanlines   (scale       ),
-	.rotate      ( 2'b00      ),
-	.blend       ( 1'b0       )
+	.ypbpr        (ypbpr       ),
+        .scanlines    (scale       ),
+	.rotate       ( 2'b00      ),
+	.blend        ( 1'b0       )
 );
 
 
