@@ -17,7 +17,7 @@
 //============================================================================
 `default_nettype none
 
-module TatungEinstein
+module guest_top
 (
 	input         CLOCK_27,
 `ifdef USE_CLOCK_50
