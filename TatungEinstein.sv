@@ -482,7 +482,7 @@ mist_video #(.COLOR_DEPTH(8), .SD_HCNT_WIDTH(11), .OUT_COLOR_DEPTH(VGA_BITS), .B
 	.VGA_HS           (VGA_HS           ),
 	.ce_divider       (1'b0             ),
 	.no_csync         (no_csync         ),
-	.scandoubler_disable ( scandoubler_disable ),
+	.scandoubler_disable(scandoubler_disable ),
 	.ypbpr            (ypbpr            ),
 	.scanlines        (scale            ),
 	.rotate           (2'b00            ),
