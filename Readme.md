@@ -8,7 +8,7 @@ Both Einstein TC-01 and Einstein 256 included.
 
 BigMist friendly.
 
-================================================================
+=====================================
 
 Known issues: 
 
