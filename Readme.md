@@ -14,7 +14,7 @@ BigMist friendly.
 
 Some graphics modes are not displayed properly.
 
-Scanlines do not work properly in 256 mode.
+Scanlines aren't displayed right in 256 mode.
 
 ___
 Tatung Einstein for MiSTer FPGA
