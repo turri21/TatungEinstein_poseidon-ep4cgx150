@@ -5,7 +5,7 @@ Direct MiSTer port to Poseidon-ep4cgx150.
 Both Einstein TC-01 and Einstein 256 included.
 BigMist friendly.
 
-----------------------------------------------------------------
+================================================================
 
 Known issues: 
 The Einstein 256 some graphics modes are not displayed properly.
