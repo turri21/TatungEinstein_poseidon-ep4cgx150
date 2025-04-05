@@ -1,6 +1,6 @@
 -=(Poseidon notes)=-
 
-###Features:
+### Features:
 
 Direct MiSTer port to Poseidon-ep4cgx150. 
 
@@ -10,7 +10,7 @@ BigMist friendly.
 
 ==========================================
 
-###Known issues: 
+### Known issues: 
 
 The Einstein 256 some graphics modes are not displayed properly.
 
