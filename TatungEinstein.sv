@@ -457,7 +457,7 @@ mist_video #(.COLOR_DEPTH(8), .SD_HCNT_WIDTH(10), .USE_BLANKS(1), .OUT_COLOR_DEP
 	.scanlines        (                 ),
 	.ypbpr            (1'b0             ),
 	.no_csync         (1'b1             )
-	);
+);
 
 assign HDMI_PCLK = clk_25;
 
