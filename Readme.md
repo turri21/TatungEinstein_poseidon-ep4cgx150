@@ -1,6 +1,6 @@
 -=(Poseidon notes)=-
 
-#Features:
+#Features:#
 
 Direct MiSTer port to Poseidon-ep4cgx150. 
 
