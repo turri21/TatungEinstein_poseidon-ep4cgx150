@@ -12,7 +12,7 @@ BigMist friendly.
 
 ### Known issues: 
 
-The Einstein 256 some graphics modes are not displayed properly.
+Some graphics modes are not displayed properly.
 
 Scanlines do not work properly in 256 mode.
 
