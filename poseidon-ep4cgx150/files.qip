@@ -1,4 +1,4 @@
-set_global_assignment -name SYSTEMVERILOG_FILE ../TatungEinstein.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../guest_top.sv
 set_global_assignment -name QIP_FILE ../rtl/jt49/jt49.qip
 set_global_assignment -name QIP_FILE ../rtl/T80/T80.qip
 set_global_assignment -name VERILOG_FILE ../rtl/ram.v
